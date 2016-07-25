@@ -14,13 +14,15 @@ import java.util.List;
 
 /**
  * Created by Günhan on 28.02.2016.
+ *
+ *
  */
 public class SampleSheetAdapter extends RecyclerView.Adapter<SampleSheetAdapter.ItemHolder> {
-    private List<SampleModel> list;
+    private List<SampleModel> sampleModelList;
     private OnItemClickListener onItemClickListener;
 
     public SampleSheetAdapter(List<SampleModel> list) {
-        this.list = list;
+        this.sampleModelList = list;
     }
 
     @Override
@@ -31,12 +33,12 @@ public class SampleSheetAdapter extends RecyclerView.Adapter<SampleSheetAdapter.
 
     @Override
     public void onBindViewHolder(SampleSheetAdapter.ItemHolder holder, int position) {
-        holder.bind(list.get(position));
+        holder.bind(sampleModelList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return sampleModelList.size();
     }
 
     public void setOnItemClickListener(OnItemClickListener listener) {
